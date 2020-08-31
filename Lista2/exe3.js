@@ -70,7 +70,7 @@ function requisito4(vet) { // vet aponta para vetor
         console.log(`Não existe habitante para este cálculo`)
     }
     else {
-        qtdeM = 0
+        var qtdeM = 0
         for (var i = 0; i < vet.length; i++) {
             if (((vet[i].sexo = 'F') && ((vet[i].idade >= 20) && (vet[i].idade <= 45))) || ((vet[i].sexo = 'F') && ((vet[i].olhos = 'V') && (vet[i].altura < 1.70)))) {
                 qtdeM++
@@ -81,5 +81,17 @@ function requisito4(vet) { // vet aponta para vetor
 }
 
 function requisito5(vet) { // vet aponta para vetor
-
+    if (vet.length = 0) {
+        console.log(`Não existe habitante para este cálculo`)
+    }
+    else {
+        var qtdeH = 0
+        for (var i = 0; i < vet.length; i++) {
+            if (vet[i].sexo = 'M') {
+                qtdeH++
+            }
+        }
+        var percentual = ((qtdeH / vet.length) * 100)
+        console.log(`O percentual de homens é ${percentual.toFixed(2)}%`)
+    }
 }
