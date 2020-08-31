@@ -66,8 +66,20 @@ function requisito3(vet) { // vet aponta para vetor
 }
 
 function requisito4(vet) { // vet aponta para vetor
-
+    if (vet.length = 0) {
+        console.log(`Não existe habitante para este cálculo`)
+    }
+    else {
+        qtdeM = 0
+        for (var i = 0; i < vet.length; i++) {
+            if (((vet[i].sexo = 'F') && ((vet[i].idade >= 20) && (vet[i].idade <= 45))) || ((vet[i].sexo = 'F') && ((vet[i].olhos = 'V') && (vet[i].altura < 1.70)))) {
+                qtdeM++
+            }
+        }
+        console.log(qtdeM)
+    }
 }
+
 function requisito5(vet) { // vet aponta para vetor
 
 }
