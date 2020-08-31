@@ -51,7 +51,7 @@ function requisito2(vet) { // vet aponta para vetor
 }
 
 function requisito3(vet) { // vet aponta para vetor
-    if (vet.length = 0) {
+    if (vet.length < 1) {
         console.log(`Não existe habitante para este cálculo`)
     }
     else {
@@ -66,7 +66,7 @@ function requisito3(vet) { // vet aponta para vetor
 }
 
 function requisito4(vet) { // vet aponta para vetor
-    if (vet.length = 0) {
+    if (vet.length < 1) {
         console.log(`Não existe habitante para este cálculo`)
     }
     else {
@@ -81,7 +81,7 @@ function requisito4(vet) { // vet aponta para vetor
 }
 
 function requisito5(vet) { // vet aponta para vetor
-    if (vet.length = 0) {
+    if (vet.length < 1) {
         console.log(`Não existe habitante para este cálculo`)
     }
     else {
