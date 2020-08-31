@@ -51,8 +51,20 @@ function requisito2(vet) { // vet aponta para vetor
 }
 
 function requisito3(vet) { // vet aponta para vetor
-
+    if (vet.length = 0) {
+        console.log(`Não existe habitante para este cálculo`)
+    }
+    else {
+        var maiorIdade = vet[0].idade
+        for (var i = 0; i < vet.length; i++) {
+            if (vet[i].idade > maiorIdade) {
+                maiorIdade = vet[i].idade
+            }
+        }
+        console.log(`A maior idade entre os habitantes é ${maiorIdade}`)
+    }
 }
+
 function requisito4(vet) { // vet aponta para vetor
 
 }
