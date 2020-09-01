@@ -56,7 +56,7 @@ function requisito3(vet) { // vet aponta para vetor
     }
     else {
         var maiorIdade = vet[0].idade
-        for (var i = 0; i < vet.length; i++) {
+        for (var i = 1; i < vet.length; i++) {
             if (vet[i].idade > maiorIdade) {
                 maiorIdade = vet[i].idade
             }
@@ -72,7 +72,9 @@ function requisito4(vet) { // vet aponta para vetor
     else {
         var qtdeM = 0
         for (var i = 0; i < vet.length; i++) {
-            if (((vet[i].sexo = 'F') && ((vet[i].idade >= 20) && (vet[i].idade <= 45))) || ((vet[i].sexo = 'F') && ((vet[i].olhos = 'V') && (vet[i].altura < 1.70)))) {
+            if ((((vet[i].sexo == 'F') && (vet[i].idade >= 20) && (vet[i].idade <= 40)))
+            || 
+            (((vet[i].sexo == 'F') && (vet[i].olhos == 'V') && (vet[i].altura < 1.70)))) {
                 qtdeM++
             }
         }
@@ -87,11 +89,11 @@ function requisito5(vet) { // vet aponta para vetor
     else {
         var qtdeH = 0
         for (var i = 0; i < vet.length; i++) {
-            if (vet[i].sexo = 'M') {
+            if (vet[i].sexo == 'M') {
                 qtdeH++
             }
         }
         var percentual = ((qtdeH / vet.length) * 100)
-        console.log(`O percentual de homens é ${percentual.toFixed(2)}%`)
+        console.log(`O percentual de homens é ${percentual.toFixed(2)} %`)
     }
 }
