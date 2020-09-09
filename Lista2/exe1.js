@@ -24,13 +24,32 @@ function chefe() {
                     break
             case 5: consultaMaiorVendedor(vendas)
                     break
-            case 6: 
+            case 6: consultaMesMaisVendas(vendas)
                     break
             case 7: console.log(`Saindo ...`)
                     break
         }
     }
     while (opcao != 7)
+}
+
+function consultaMesMaisVendas(vend) {
+    // vamos criar um vetor que vai conter total de vendas
+    let meses = [0,0,0,0,0,0,0,0,0,0,0,0]
+    // percorre vetor de vendas
+    for (let i = 0; i < vend.length; i++) {
+        let posicao = vend[i].mes - 1
+        meses[posicao] = meses[posicao] + vend[i].valor
+    }
+    // descobrir o maior valor no vetor
+    let maiorValor = meses[0]
+    for (let i = 1; i < vend.length; i++) {
+        if (vend[i].valor > maiorValor) { // achei um valor maior
+            maiorValor = vend[i].valor // atualiza
+        }
+    }
+    let posicao = vend.indexOf(maiorValor) // posição no vetor contendo o maior valor
+    console.log(`Mês com mais vendas ${posicao + 1} e o valor é ${maiorValor}`)
 }
 
 function cadastraVendedor(vendor){ // escopo local - vendor faz referência para vendedores 
