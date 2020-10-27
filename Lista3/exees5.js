@@ -1,10 +1,10 @@
 
-// Busca por uma bicicleta no vetor a partir de um código informado pelo usuario
+// 2.   Busca por uma bicicleta no vetor a partir de um código informado pelo usuario
 var codigo = Number(prompt(`Informe código`))
 console.log(vet.filter((objeto) => (objeto.codigo == codigo))) // faz o for
 
 
-// 3. Calcula a soma dos valores das bicicletas em estoque
+// 3.   Calcula a soma dos valores das bicicletas em estoque
 let soma = function(vet){
     // inicializa a soma com 0
     let result = vet.reduce(soma2, 0) // executando um for ou while
