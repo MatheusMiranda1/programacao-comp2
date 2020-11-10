@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css">
+        <script>
+            function chamaAPI(){
+                let req = new XMLHttpRequest()
+                // recupera o que o usuário informou
+                let titulo = document.getElementById('titulo').value
+                // criar url
+                let url = `http://www.omdbapi.com/?t=${titulo}&apikey=38b76ff2`
+                // vamos abrir a requisição
+                req.open('GET', url, true)
+                // vamos enviar a solicitação
+                req.send()
+                // vamos processar a resposta
+                req.onload = function(){
+                    // transforma o resultado em formato JSON
+                    let result = JSON.parse(req.responseText)
+                    // vamos inserir no formulário
+                    document.getElementById('Title').innerHTML = result.Title
+                    document.getElementById('Year').innerHTML = result.Year
+                    document.getElementById('Rated').innerHTML = result.Rated
+                    document.getElementById('imagem').src = result.Poster
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <!-- container é classe do bootstrap-->
+        <div class="container">
+            <form>
+                <!-- form-group é classe do bootstrap-->
+                <div class="form-group">
+                    <label> Titulo do filme </label>
+                    <!-- form-control é classe do bootstrap-->
+                    <input type="text" class="form-control" id="titulo"/>
+                </div>
+                <div class="form-group">
+                    <button type="button" onClick="chamaAPI()" class="btn btn-primary"> Chama API </button>
+                </div>
+                <div class="form-group">
+                    Titulo: <h2 id="Title"> </h2>
+                    Ano :<h3 id="Year"> </h3>
+                    Classificação: <h3 id="Rated"> </h3>
+                    <h3>
+                        <img id="imagem"/>
+                    </h3>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
